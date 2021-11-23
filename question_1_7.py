@@ -8,6 +8,7 @@ def rotate_matrix(matrix):
             top = matrix[i][j]
             print("I:", i, "J:", j)
 
+            print("ABS-------" ,abs(i-size-start))
             right = matrix[j][abs(i-size-start) % length]
             print("I:", j, "J:", abs(i-size-start) % length)
             
@@ -30,6 +31,7 @@ def rotate_matrix(matrix):
 
         if(start < length):
             start+=1
+            size //= 2
         else:
             break
     return matrix
