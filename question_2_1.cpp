@@ -5,9 +5,25 @@
 using namespace std;
 
 template <typename T>
-void remove_dups(list<T> check){
+void remove_dups(list<T>& check){
     map<T,int> checker;
 
+    typename list<T>::iterator it;
+    it = check.begin();
+
+    while(it != check.end()){
+        T a = *it; 
+        if(checker.count(a)){
+            it = check.erase(it);
+        }
+        else{
+            cout << "ran insert" << endl; 
+            cout << "Inserting " << a << endl; 
+            checker.insert(pair<T,int>(a, 1));
+            cout << "finished insert" << endl; 
+            ++it;
+        }
+    }
     
 }
 
